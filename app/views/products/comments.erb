@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="col-md-12">
+    <h1>All Comments
+      <a href="/products">
+        <button type="button" class="btn btn-success">Back</button>
+      </a>
+    </h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Comment</th>
+          <th>Product</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @comments.each do |comment| %>
+        <tr>
+          <td><%= comment.comment %></td>
+          <td><%= comment.product.name %></td>
+
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -6,6 +6,7 @@
 
     <form action="/products/update/<%= @product.id %>" method="post">
       <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <input type="hidden" data-method="patch" name="" value="">
       <div class="form-group">
         <label for="name">Product Name:</label>
         <input name="name" value="<%= @product.name %>" type="text" class="form-control" id="name">

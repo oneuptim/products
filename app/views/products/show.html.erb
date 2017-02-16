@@ -1,14 +1,33 @@
 <div class="container">
-  <div class="col-md-3">
+  <div class="col-md-2">
   </div>
-  <div class="col-md-6">
+  <div class="col-md-8">
     <h1><%= @product.name %>'s Details <a href="/products"><button type="button" class="btn btn-info">Back</button></a></h1>
       <ul class="list-group">
         <li class="list-group-item"><strong>Name: </strong> <%= @product.name %></li>
-        <li class="list-group-item"><strong>Description </strong> <br> <%= @product.description %></li>
+        <li class="list-group-item"><strong>Description: </strong> <br> <%= @product.description %></li>
         <li class="list-group-item"><strong>Price: </strong> <%= @product.pricing %></li>
+        <li class="list-group-item"><strong>Category: </strong> <%= @product.category.name %></li>
       </ul>
+
+    <form class="form-group" action="/comment" method="post">
+      <textarea class="form-control" name="comment" rows="5" id="comment" placeholder="Post a comment about this product..."></textarea>
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <input type="hidden" name="product_id" value="<%= @product.id %>">
+      <hr>
+      <input class="btn btn-success" type="submit" name="" value="Post Comment">
+    </form>
+    <hr>
+    <h4>Comments</h3>
+    <div class="panel panel-info">
+      <% @comments.each do |comment| %>
+        <div class="panel-heading">Posted: <%= comment.created_at %></div>
+        <div class="panel-body"><%= comment.comment %></div>
+      <hr>
+      <% end %>
+    </div>
+
   </div>
-  <div class="col-md-3">
+  <div class="col-md-2">
   </div>
 </div>
