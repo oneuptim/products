@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+    <h1>Edit <%= @product.name %> <a href="/products"><button type="button" class="btn btn-info">Back</button></a></h1>
+
+    <form action="/products/update/<%= @product.id %>" method="post">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <div class="form-group">
+        <label for="name">Product Name:</label>
+        <input name="name" value="<%= @product.name %>" type="text" class="form-control" id="name">
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input name="description" value="<%= @product.description %>" type="text-area" class="form-control" id="description">
+      </div>
+      <div class="form-group">
+        <label for="pricing">Price:</label>
+        <input name="pricing" value="<%= @product.pricing %>" type="float" class="form-control" id="pricing">
+      </div>
+
+      <!-- <%= @product.category.id %> -->
+
+      <select class="selectpicker" name="category_id">
+        <option value="1">Electronics</option>
+        <option value="2">Household</option>
+        <option value="3">Gardening</option>
+        <option value="4">Ninjas</option>
+      </select>
+      <hr>
+
+
+      <a href="/products">
+      <button type="button" class="btn btn-default">Back</button>
+      </a>
+      <button type="submit" class="btn btn-success">Update Product</button>
+    </form>
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Listing Products
+      <a href="/products/new">
+        <button type="button" class="btn btn-success">Add New Product</button>
+      </a>
+    </h1>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Category</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+        <tr>
+          <td><%= product.id %></td>
+          <td><%= product.name %></td>
+          <td><%= product.description %></td>
+          <td><%= product.pricing %></td>
+          <td><%= product.category.name %></td>
+          <td><a href="/products/<%= product.id %>"><button type="button" class="btn btn-info">Details</button></a>
+            <a href="/products/<%= product.id %>/edit"><button type="button" class="btn btn-default">Edit</button></a>
+            <a href="/products/destroy/<%= product.id %>"><button type="button" class="btn btn-danger">Delete</button></a>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+</div>

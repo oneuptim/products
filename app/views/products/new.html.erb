@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="col-md-8">
+    <h1>Add New Product</h1>
+    <form action="/products/create" method="post">
+      <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+      <div class="form-group">
+        <label for="name">Product Name:</label>
+        <input name="name" type="text" class="form-control" id="name">
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <input name="description" type="text-area" class="form-control" id="description">
+      </div>
+      <div class="form-group">
+        <label for="pricing">Price:</label>
+        <input name="pricing" type="text" class="form-control" id="pricing">
+      </div>
+      <select class="selectpicker" name="category_id">
+        <option value="1">Electronics</option>
+        <option value="2">Household</option>
+        <option value="3">Gardening</option>
+        <option value="4">Automotive</option>
+        <option value="5">Ninjas</option>
+      </select>
+      <hr>
+      <a href="/products">
+      <button type="button" class="btn btn-default">Back</button>
+      </a>
+      <button type="submit" class="btn btn-success">Add Product</button>
+    </form>
+
+
+
+
+
+    <!-- <button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Category
+    <span class="caret"></span></button>
+    <ul name="category_id" class="dropdown-menu" role="menu" aria-labelledby="menu1">
+      <li value="1" role="presentation"><a role="menuitem" tabindex="-1" href="#">Electronics</a></li>
+      <li role="presentation" class="divider"></li>
+      <li value="2" role="presentation"><a role="menuitem" tabindex="-1" href="#">Household</a></li>
+      <li role="presentation" class="divider"></li>
+      <li value="3" role="presentation"><a role="menuitem" tabindex="-1" href="#">Gardening</a></li>
+      <li role="presentation" class="divider"></li>
+      <li value="4" role="presentation"><a role="menuitem" tabindex="-1" href="#">Ninjas</a></li>
+    </ul> -->
+
+
+
+
+  </div>
+</div>
